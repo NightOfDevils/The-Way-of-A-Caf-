@@ -12,6 +12,8 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Transform pfItemWorld;
+    public Transform ItemWorldSpawner_Drink;
+    public Transform ItemWorldSpawner_Food;
 
     public Sprite drinkSprite;
     public Sprite foodSprite;

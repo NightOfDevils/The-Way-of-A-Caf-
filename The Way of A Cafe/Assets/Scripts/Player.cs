@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+        inventory = new Inventory(); // Sets up new inventory
+        uiInventory.SetInventory(inventory); // Sends new inventory to UI
 
         /*
          *Ways to spawn items via manual rather than placing in hirearchy 
@@ -22,12 +22,12 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
+        ItemWorld itemWorld = collider.GetComponent<ItemWorld>(); // Gets the collider of the item
 
-        if(itemWorld !=null)
+        if(itemWorld !=null) // Checks if item is in range
         { 
-            inventory.AddItem(itemWorld.GetItem());
-            itemWorld.DestorySelf();
+            inventory.AddItem(itemWorld.GetItem()); //Adds item to list
+            itemWorld.DestorySelf(); // Destroys item
         }
 
     }

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Inventory inventory;
 
     [SerializeField] private UI_Inventory uiInventory;
+    private Item item;
 
     private void Start()
     {
@@ -25,9 +26,17 @@ public class Player : MonoBehaviour
         ItemWorld itemWorld = collider.GetComponent<ItemWorld>(); // Gets the collider of the item
 
         if(itemWorld !=null) // Checks if item is in range
-        { 
-            inventory.AddItem(itemWorld.GetItem()); //Adds item to list
-            itemWorld.DestorySelf(); // Destroys item
+        {
+            item = itemWorld.GetItem(); // Set item to the current item that was collided with
+            if(uiInventory.Total() < 4 || item.IsStackable()) // Check if either inventory has space or if the item is stackable
+            {
+                inventory.AddItem(itemWorld.GetItem()); //Adds item to list
+                itemWorld.DestorySelf(); // Destroys item
+            }
+            else
+            {
+                Debug.Log("Inventory is Full");
+            }
         }
 
     }

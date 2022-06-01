@@ -24,31 +24,31 @@ public class ItemWorld : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        textMeshPro = transform.Find("text").GetComponent<TextMeshPro>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Gets the render image of the current item
+        textMeshPro = transform.Find("text").GetComponent<TextMeshPro>(); // Gets the text for the current item
     }
 
 
-    public void SetItem(Item item)
+    public void SetItem(Item item) // Sets the current item
     {
         this.item = item;
         spriteRenderer.sprite = item.GetSprite();
-        if(item.amount > 1)
+        if(item.amount > 1) // If amount is greater than 1 set the text to display
         {
             textMeshPro.SetText(item.amount.ToString());
         }
-        else
+        else // if not do not show text
         {
             textMeshPro.SetText("");
         }
     }
 
-    public Item GetItem()
+    public Item GetItem() // Returns the current item
     {
         return item;
     }
 
-    public void DestorySelf()
+    public void DestorySelf() // Destroys the current item
     {
         Destroy(gameObject);
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class StorageBin : MonoBehaviour
 {
     public Item item;
+    public bool isStackable;
     [SerializeField] string itemName; // A string field so we can put tags on items to spawn correct items.
     [SerializeField] private Transform playerTransform; // Position of the player
 
@@ -19,5 +20,19 @@ public class StorageBin : MonoBehaviour
         {
             Instantiate(ItemAssets.Instance.ItemWorldSpawner_Food, playerTransform.position, Quaternion.identity); // Spawns food item prefab
         }
+    }
+
+    public bool ItemStackable() // Sends if the item the storage box creates is stackable or not
+    {
+        if(itemName == "Drink")
+        {
+            isStackable = true;
+        }
+        else if(itemName == "Food")
+        {
+            isStackable = false;
+        }
+
+        return isStackable;
     }
 }

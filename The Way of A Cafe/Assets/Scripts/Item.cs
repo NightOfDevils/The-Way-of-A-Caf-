@@ -10,6 +10,8 @@ public class Item
     {
         Food,
         Drink,
+        EmptyCup,
+        CoffeeBeans,
     }
 
     public ItemType itemType;
@@ -23,6 +25,8 @@ public class Item
             default:
             case ItemType.Drink: return ItemAssets.Instance.drinkSprite;
             case ItemType.Food: return ItemAssets.Instance.foodSprite;
+            case ItemType.EmptyCup: return ItemAssets.Instance.emptySprite;
+            case ItemType.CoffeeBeans: return ItemAssets.Instance.beanSprite;
         }
     }
 
@@ -32,6 +36,8 @@ public class Item
         {
             default:
             case ItemType.Drink:
+            case ItemType.EmptyCup:
+            case ItemType.CoffeeBeans:
                 return true;
             case ItemType.Food:
                 return false;

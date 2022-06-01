@@ -9,7 +9,8 @@ public class UI_Inventory : MonoBehaviour
     private Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
-
+    public int x = 0;
+    public int y = 0;
 
     private void Awake()
     {
@@ -30,6 +31,10 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventoryItems();
     }
 
+    public int Total() // Gives the number of slots taken in inventory
+    {
+        return x;
+    }
 
     private void RefreshInventoryItems()
     {
@@ -39,8 +44,8 @@ public class UI_Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        int x = 0;
-        int y = 0;
+        x = 0;
+        y = 0;
         float itemSlotCellSize = 100f;
 
         foreach (Item item in inventory.GetItemList())
@@ -63,11 +68,13 @@ public class UI_Inventory : MonoBehaviour
             }
 
             x++; //Shifts potion of new item spawn everything a new item is added
+            /*
             if(x > 4)
             {
                 x = 0;
                 y++;
             }
+            */
         }
 
     }

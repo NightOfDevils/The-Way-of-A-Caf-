@@ -7,22 +7,30 @@ public class ItemInteractButton : MonoBehaviour
     [SerializeField] private Transform playerTransform;
 
     private Inventory inventory;
+    [SerializeField] private UI_Inventory ui;
     private StorageBin storageBin;
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E)) // When E is pressed
         {
-            float interactRadius = .5f;
-            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(playerTransform.position, interactRadius); // Create a detection radius around player
-            foreach (Collider2D collider2D in collider2DArray) //Check what objects are around player
+            if (ui.Total() < 4)
             {
-                StorageBin storageBin = collider2D.GetComponent<StorageBin>();
-                if(storageBin != null) // Checks if is in range of bins
+                float interactRadius = .5f;
+                Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(playerTransform.position, interactRadius); // Create a detection radius around player
+                foreach (Collider2D collider2D in collider2DArray) //Check what objects are around player
                 {
-                    storageBin.SpawnItem(); // Calls bin item spawn method
+                    StorageBin storageBin = collider2D.GetComponent<StorageBin>();
+                    if (storageBin != null) // Checks if is in range of bins
+                    {
+                        storageBin.SpawnItem(); // Calls bin item spawn method
+                    }
                 }
-            }  
+            }
+            else
+            {
+                Debug.Log("Inventory is full");
+            }
         }
     }
 }

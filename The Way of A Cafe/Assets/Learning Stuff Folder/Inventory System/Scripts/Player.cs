@@ -22,6 +22,11 @@ public class Player : MonoBehaviour
         */
     }
 
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
+
     public Vector3 GetPosition()
     {
         return transform.position;

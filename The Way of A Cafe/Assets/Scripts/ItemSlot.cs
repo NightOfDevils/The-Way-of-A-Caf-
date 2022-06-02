@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    /*
     private Vector2 currentPos;
     public int slotNumber = 0;
 
@@ -15,12 +16,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     private float y2 = 0f;
 
     private float newX, newY;
+
+    */
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
-            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            /*
             currentPos = GetComponent<RectTransform>().anchoredPosition;
             x = currentPos.x; 
             y = currentPos.y;
@@ -59,6 +63,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 
 
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(newX, newY);
+            */
         }
     }
 }

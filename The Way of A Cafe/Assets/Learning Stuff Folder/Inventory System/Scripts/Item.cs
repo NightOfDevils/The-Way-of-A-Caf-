@@ -38,6 +38,7 @@ public class Item
             case ItemType.Drink:
             case ItemType.EmptyCup:
             case ItemType.CoffeeBeans:
+            //case ItemType.Food:
                 return true;
             case ItemType.Food:
                 return false;

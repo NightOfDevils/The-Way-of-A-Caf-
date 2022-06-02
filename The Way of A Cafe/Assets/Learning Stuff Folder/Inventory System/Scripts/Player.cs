@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        inventory = new Inventory(); // Sets up new inventory
+        inventory = new Inventory(UseItem); // Sets up new inventory
+        uiInventory.SetPlayer(this);
         uiInventory.SetInventory(inventory); // Sends new inventory to UI
 
         /*
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
         ItemWorld.SpawnItemWorld(new Vector3(2, 2), new Item { itemType = Item.ItemType.Drink, amount = 1 });
         ItemWorld.SpawnItemWorld(new Vector3(-2, 2), new Item { itemType = Item.ItemType.Food, amount = 1 });
         */
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -39,6 +45,25 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    private void UseItem(Item item)
+    {
+        switch(item.itemType)
+        {
+            case Item.ItemType.Drink:
+                inventory.RemoveItem(new Item { itemType = Item.ItemType.Drink, amount = 1 });
+                break;
+            case Item.ItemType.Food:
+                inventory.RemoveItem(new Item { itemType = Item.ItemType.Food, amount = 1});
+                break;
+            case Item.ItemType.CoffeeBeans:
+                inventory.RemoveItem(new Item { itemType = Item.ItemType.CoffeeBeans, amount = 1 });
+                break;
+            case Item.ItemType.EmptyCup:
+                inventory.RemoveItem(new Item { itemType = Item.ItemType.EmptyCup, amount = 1 });
+                break;
+        }
     }
 
 }

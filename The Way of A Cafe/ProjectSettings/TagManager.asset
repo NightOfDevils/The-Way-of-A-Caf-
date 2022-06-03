@@ -45,7 +45,7 @@ TagManager:
   - name: Floor
     uniqueID: 673283861
     locked: 0
-  - name: Background
+  - name: BuildingWalls
     uniqueID: 291617913
     locked: 0
   - name: Default

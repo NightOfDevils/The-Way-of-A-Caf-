@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); 
+        rb.velocity = new Vector2(movement.x, movement.y).normalized * moveSpeed;
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); 
 
     }
 }

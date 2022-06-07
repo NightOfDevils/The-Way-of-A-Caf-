@@ -110,19 +110,16 @@ public class CraftingManager : MonoBehaviour
             {
                 timer.setDuration(15).Begin();
                 SubItems(1);
-                while (!(timer.IsFinished()))
+                if (timer.IsFinished()) //FIX TIMER NOT WORKING PROPERLY
                 {
-                    if(timer.IsFinished())
-                    {
-                        RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
-                        resultSlot.gameObject.SetActive(true); // set result slot to visible
-                        resultSlot.itemAmount = 1;
-                        Image image = slotTransform.Find("Icon").GetComponent<Image>();
-                        image.sprite = recipeResults[i].icon; // set the sprite in result slot to the sprite of the product
-                        TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
-                        itemText.SetText("");
-                        resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
-                    }
+                    RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
+                    resultSlot.gameObject.SetActive(true); // set result slot to visible
+                    resultSlot.itemAmount = 1;
+                    Image image = slotTransform.Find("Icon").GetComponent<Image>();
+                    image.sprite = recipeResults[i].icon; // set the sprite in result slot to the sprite of the product
+                    TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                    itemText.SetText("");
+                    resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
                 }
             }
         }

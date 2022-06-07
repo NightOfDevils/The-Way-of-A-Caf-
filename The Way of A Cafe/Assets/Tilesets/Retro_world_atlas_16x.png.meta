@@ -4340,7 +4340,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_200
+      name: plain1
       rect:
         serializedVersion: 2
         x: 192
@@ -4361,11 +4361,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_201
+      name: plain2
       rect:
         serializedVersion: 2
         x: 208
-        y: 176
+        y: 175
         width: 16
         height: 16
       alignment: 0
@@ -4382,7 +4382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_202
+      name: plain3
       rect:
         serializedVersion: 2
         x: 224
@@ -5348,7 +5348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_248
+      name: plain4
       rect:
         serializedVersion: 2
         x: 192
@@ -5369,7 +5369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_249
+      name: plain5
       rect:
         serializedVersion: 2
         x: 208
@@ -5390,7 +5390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_250
+      name: plain6
       rect:
         serializedVersion: 2
         x: 224
@@ -6356,7 +6356,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_296
+      name: plain7
       rect:
         serializedVersion: 2
         x: 192
@@ -6377,7 +6377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_297
+      name: plain8
       rect:
         serializedVersion: 2
         x: 208
@@ -6398,7 +6398,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Retro_world_atlas_16x_298
+      name: plain9
       rect:
         serializedVersion: 2
         x: 224
@@ -15919,7 +15919,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -15995,6 +15995,7 @@ TextureImporter:
       Retro_world_atlas_16x_688: -1483372186
       Retro_world_atlas_16x_721: 1165170462
       Retro_world_atlas_16x_7: 446102344
+      plain4: -417945742
       Retro_world_atlas_16x_433: -2045980071
       Retro_world_atlas_16x_51: -43687192
       Retro_world_atlas_16x_629: 658789991
@@ -16032,6 +16033,7 @@ TextureImporter:
       Retro_world_atlas_16x_8: 1550258900
       Retro_world_atlas_16x_276: 1907465130
       Retro_world_atlas_16x_458: -714957010
+      plain7: -1137761462
       Retro_world_atlas_16x_574: 1728282742
       Retro_world_atlas_16x_539: 488282415
       Retro_world_atlas_16x_662: -46922344
@@ -16048,6 +16050,7 @@ TextureImporter:
       Retro_world_atlas_16x_643: -1833638813
       Retro_world_atlas_16x_442: -2091551510
       Retro_world_atlas_16x_435: 293312734
+      plain2: 1646242904
       Retro_world_atlas_16x_439: -1816159399
       Retro_world_atlas_16x_350: 1387230889
       Retro_world_atlas_16x_496: 1772895213
@@ -16080,17 +16083,16 @@ TextureImporter:
       Retro_world_atlas_16x_280: 484112445
       Retro_world_atlas_16x_475: -1760703057
       Retro_world_atlas_16x_444: -1623633812
+      plain6: -747454078
       Retro_world_atlas_16x_556: 617393030
       Retro_world_atlas_16x_429: -532975394
       Retro_world_atlas_16x_85: -252483834
-      Retro_world_atlas_16x_202: 678320724
-      Retro_world_atlas_16x_4: 1592353329
       Retro_world_atlas_16x_411: -923478202
+      Retro_world_atlas_16x_4: 1592353329
       Retro_world_atlas_16x_120: -208995993
       Retro_world_atlas_16x_686: 1337860418
       Retro_world_atlas_16x_34: -1077390257
       Retro_world_atlas_16x_638: 41759613
-      Retro_world_atlas_16x_200: 297824641
       Retro_world_atlas_16x_329: 2091757026
       Retro_world_atlas_16x_371: 1634006820
       Retro_world_atlas_16x_461: -1038778913
@@ -16288,6 +16290,7 @@ TextureImporter:
       Retro_world_atlas_16x_668: 1404165176
       Retro_world_atlas_16x_417: -1597580875
       Retro_world_atlas_16x_560: -1595555235
+      plain8: 964583167
       Retro_world_atlas_16x_180: -2058469546
       Retro_world_atlas_16x_430: 737616923
       Retro_world_atlas_16x_476: -1698848074
@@ -16325,12 +16328,10 @@ TextureImporter:
       Retro_world_atlas_16x_340: 2018715196
       Retro_world_atlas_16x_352: 307194831
       Retro_world_atlas_16x_234: 1508016221
-      Retro_world_atlas_16x_201: 1646242904
       Retro_world_atlas_16x_146: -1205054330
       Retro_world_atlas_16x_403: -641943958
       Retro_world_atlas_16x_219: 1587954526
       Retro_world_atlas_16x_657: 763815053
-      Retro_world_atlas_16x_296: -1137761462
       Retro_world_atlas_16x_232: -535275028
       Retro_world_atlas_16x_210: -215957472
       Retro_world_atlas_16x_182: 231629626
@@ -16388,7 +16389,6 @@ TextureImporter:
       Retro_world_atlas_16x_198: -178236190
       Retro_world_atlas_16x_142: 1169215589
       Retro_world_atlas_16x_149: 588103537
-      Retro_world_atlas_16x_249: 548329745
       Retro_world_atlas_16x_349: -1114662555
       Retro_world_atlas_16x_565: 1082071820
       Retro_world_atlas_16x_176: 171952677
@@ -16409,6 +16409,7 @@ TextureImporter:
       Retro_world_atlas_16x_611: -1174995610
       Retro_world_atlas_16x_699: -1915584324
       Retro_world_atlas_16x_703: -1039841517
+      plain3: 678320724
       Retro_world_atlas_16x_591: -1026517830
       Retro_world_atlas_16x_596: -1299169257
       Retro_world_atlas_16x_373: -680248864
@@ -16549,7 +16550,6 @@ TextureImporter:
       Retro_world_atlas_16x_353: 626952837
       Retro_world_atlas_16x_670: -2084025137
       Retro_world_atlas_16x_543: -81725735
-      Retro_world_atlas_16x_297: 964583167
       Retro_world_atlas_16x_86: 817607753
       Retro_world_atlas_16x_226: 944291696
       Retro_world_atlas_16x_147: -1518381292
@@ -16557,6 +16557,7 @@ TextureImporter:
       Retro_world_atlas_16x_453: 1382618744
       Retro_world_atlas_16x_748: -406320012
       Retro_world_atlas_16x_101: -2116091765
+      plain1: 297824641
       Retro_world_atlas_16x_749: 1281265143
       Retro_world_atlas_16x_170: -1333634926
       Retro_world_atlas_16x_568: -1070003970
@@ -16620,13 +16621,13 @@ TextureImporter:
       Retro_world_atlas_16x_593: -1270995324
       Retro_world_atlas_16x_492: 1859465219
       Retro_world_atlas_16x_228: -1114109135
+      plain5: 548329745
       Retro_world_atlas_16x_517: -1214061500
       Retro_world_atlas_16x_625: 668924417
       Retro_world_atlas_16x_359: 1190566165
       Retro_world_atlas_16x_217: 577451807
       Retro_world_atlas_16x_229: -139528575
       Retro_world_atlas_16x_499: -465389151
-      Retro_world_atlas_16x_248: -417945742
       Retro_world_atlas_16x_493: 924813018
       Retro_world_atlas_16x_168: 1326019962
       Retro_world_atlas_16x_313: -328352496
@@ -16665,16 +16666,15 @@ TextureImporter:
       Retro_world_atlas_16x_443: -1676529786
       Retro_world_atlas_16x_347: -918809429
       Retro_world_atlas_16x_70: -2089524891
-      Retro_world_atlas_16x_250: -747454078
       Retro_world_atlas_16x_575: -137215319
       Retro_world_atlas_16x_642: 1364815735
       Retro_world_atlas_16x_194: 1297124863
       Retro_world_atlas_16x_166: -1677349700
-      Retro_world_atlas_16x_298: 1197189370
       Retro_world_atlas_16x_508: -989805029
       Retro_world_atlas_16x_564: -553464052
       Retro_world_atlas_16x_58: 946371906
       Retro_world_atlas_16x_482: -1061323597
+      plain9: 1197189370
       Retro_world_atlas_16x_115: 836983143
       Retro_world_atlas_16x_515: -1528229002
       Retro_world_atlas_16x_222: 1335979145

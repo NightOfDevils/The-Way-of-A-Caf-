@@ -201,8 +201,6 @@ public class ClickDrag : MonoBehaviour
                 itemText.SetText(slot.itemAmount.ToString());
             }
             slot.itemAmount = 0;
-            itemTaken = true;
-            craftingManager.SubItems(1);
         }
     }
 

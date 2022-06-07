@@ -13,12 +13,11 @@ public class CraftingManager : MonoBehaviour
     public ItemObject[] recipeResults; // item array of product items 
     public Slot resultSlot; // slot for final product
     public bool subItems = false;
+    public MachineObject machineObject;
+    [SerializeField] Timer timer;
 
     private void Update()
     {
-        CheckForCreateRecipies();
-        if (clickDrag.GetItemTaken())
-        {
             foreach (Slot slot in craftingSlots)
             {
                 RectTransform slotTransform = slot.GetComponent<RectTransform>();
@@ -43,7 +42,6 @@ public class CraftingManager : MonoBehaviour
                     }
                 }
             }
-        }
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -75,6 +73,11 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
+    public void OnMouseDownButton()
+    {
+        CheckForCreateRecipes();
+    }
+
     public void SubItems(int sub)
     {
         foreach (Slot slot in craftingSlots)
@@ -83,7 +86,7 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
-    void CheckForCreateRecipies() // checking if any recipes were made
+    void CheckForCreateRecipes() // checking if any recipes were made
     {
         resultSlot.gameObject.SetActive(false); // set result slot to invisible
         resultSlot.item = null; // delete any item from null slot
@@ -105,14 +108,22 @@ public class CraftingManager : MonoBehaviour
         {
             if(recipes[i].craftingRecipe == currentRecipeString) // if recipe matches current recipe
             {
-                RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
-                resultSlot.gameObject.SetActive(true); // set result slot to visible
-                resultSlot.itemAmount = 1;
-                Image image = slotTransform.Find("Icon").GetComponent<Image>();
-                image.sprite = recipeResults[i].icon; // set the sprite in result slot to the sprite of the product
-                TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
-                itemText.SetText("");
-                resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
+                timer.setDuration(15).Begin();
+                SubItems(1);
+                while (!(timer.IsFinished()))
+                {
+                    if(timer.IsFinished())
+                    {
+                        RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
+                        resultSlot.gameObject.SetActive(true); // set result slot to visible
+                        resultSlot.itemAmount = 1;
+                        Image image = slotTransform.Find("Icon").GetComponent<Image>();
+                        image.sprite = recipeResults[i].icon; // set the sprite in result slot to the sprite of the product
+                        TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                        itemText.SetText("");
+                        resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
+                    }
+                }
             }
         }
     }

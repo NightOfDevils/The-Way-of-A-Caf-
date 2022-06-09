@@ -10,7 +10,8 @@ public class Timer : MonoBehaviour
     [Header("Timer UI references: ")]
     [SerializeField] private Image uiFillImage;
     [SerializeField] private TextMeshProUGUI uiText;
-    private bool finished = false;
+    public CraftingManager craftingManager;
+    public Timer timer;
 
     public int Duration { get; private set; }
 
@@ -31,7 +32,6 @@ public class Timer : MonoBehaviour
 
     public void Begin()
     {
-        finished = false;
         StopAllCoroutines();
         StartCoroutine(UpdateTimer());
     }
@@ -55,13 +55,9 @@ public class Timer : MonoBehaviour
 
     public void End()
     {
-        finished = true;
+        craftingManager.SpawnProduct();
         ResetTimer();
-    }
-
-    public bool IsFinished()
-    {
-        return finished;
+        timer.gameObject.SetActive(false);
     }
 
     private void OnDestroy()

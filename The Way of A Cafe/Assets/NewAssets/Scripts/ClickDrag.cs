@@ -14,7 +14,6 @@ public class ClickDrag : MonoBehaviour
     private string whichSlots = ""; // Creates a string that contains the tag of the slot given the item
     public CustomCursor customCursor; // Object of the custom cursor to get it's different values and game object
     public Slot[] allSlots; // Array that contains all slots within the scene (except product slots)
-    public CraftingManager craftingManager; // Holds the crafting manager object to access information and functions
     Slot nearestSlot = null; // create a nearest slot variable that holds the closest slot
     Slot swapSlot = null; // creates a slot variable that holds the slot that swaps items with the closests slot
 
@@ -130,6 +129,11 @@ public class ClickDrag : MonoBehaviour
     public bool GetItemTaken() // returns the item taken from product bool 
     {
         return itemTaken;
+    }
+
+    public void OnDrop(Slot slot) // switch drop method to hear and make sure swap slot still works
+    {
+        Debug.Log("Dropped");
     }
 
     public void OnMouseDownItem(ItemObject item) //When mouse button is clicked down

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4df3281422b50e349b66e49eec3f37b7, type: 3}
-  m_Name: Espresso Machine
+  m_Name: BlenderMachine
   m_EditorClassIdentifier: 
-  name: espressomachine
-  machineType: 1
-  machineTime: 15
-  image: {fileID: -6559764877361928471, guid: f46bf2ed6eb9f8d428777e99fab1b8fb, type: 3}
+  name: blender
+  machineType: 2
+  machineTime: 10
+  image: {fileID: -4123366110678766831, guid: f46bf2ed6eb9f8d428777e99fab1b8fb, type: 3}

@@ -15,10 +15,12 @@ public class CraftingManager : MonoBehaviour
     public bool subItems = false;
     public MachineObject machineObject;
     [SerializeField] Timer timer;
+    private int productID;
 
     private void Update()
     {
-            foreach (Slot slot in craftingSlots)
+
+        foreach (Slot slot in craftingSlots)
             {
                 RectTransform slotTransform = slot.GetComponent<RectTransform>();
                 TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
@@ -86,6 +88,18 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
+    public void SpawnProduct()
+    {
+        RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
+        resultSlot.gameObject.SetActive(true); // set result slot to visible
+        resultSlot.itemAmount = 1;
+        Image image = slotTransform.Find("Icon").GetComponent<Image>();
+        image.sprite = recipeResults[productID].icon; // set the sprite in result slot to the sprite of the product
+        TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+        itemText.SetText("");
+        resultSlot.item = recipeResults[productID]; // set the item in the result slot to the product item
+    }
+
     void CheckForCreateRecipes() // checking if any recipes were made
     {
         resultSlot.gameObject.SetActive(false); // set result slot to invisible
@@ -108,8 +122,11 @@ public class CraftingManager : MonoBehaviour
         {
             if(recipes[i].craftingRecipe == currentRecipeString) // if recipe matches current recipe
             {
-                timer.setDuration(15).Begin();
+                productID = i;
+                timer.gameObject.SetActive(true);
+                timer.setDuration(machineObject.machineTime).Begin();
                 SubItems(1);
+                /*
                 if (timer.IsFinished()) //FIX TIMER NOT WORKING PROPERLY
                 {
                     RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
@@ -121,6 +138,7 @@ public class CraftingManager : MonoBehaviour
                     itemText.SetText("");
                     resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
                 }
+                */
             }
         }
     }

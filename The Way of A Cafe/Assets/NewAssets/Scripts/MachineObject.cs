@@ -7,5 +7,6 @@ public class MachineObject : ScriptableObject
 {
     public new string name;
     public int machineType;
+    public int machineTime;
     public Sprite image;
 }

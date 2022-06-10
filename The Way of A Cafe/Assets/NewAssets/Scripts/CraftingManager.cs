@@ -23,14 +23,15 @@ public class CraftingManager : MonoBehaviour
         foreach (Slot slot in craftingSlots)
             {
                 RectTransform slotTransform = slot.GetComponent<RectTransform>();
-                TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                RectTransform assetTransform = slotTransform.Find("Assets").GetComponent<RectTransform>();
+            TextMeshProUGUI itemText = assetTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
                 if (slot.itemAmount == 0)
                 {
                     slot.item = null;
                     itemList[slot.index] = null;
-                    Image image = slotTransform.Find("Icon").GetComponent<Image>();
+                    Image image = assetTransform.Find("Icon").GetComponent<Image>();
                     image.sprite = null;
-                    slot.gameObject.SetActive(false);
+                    assetTransform.gameObject.SetActive(false);
                 }
                 else
                 {
@@ -54,7 +55,8 @@ public class CraftingManager : MonoBehaviour
             foreach (Slot slot in craftingSlots)
             {
                 RectTransform slotTransform = slot.GetComponent<RectTransform>();
-                TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                RectTransform assetTransform = slotTransform.Find("Assets").GetComponent<RectTransform>();
+                TextMeshProUGUI itemText = assetTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
                 if (slot.item == null)
                 {
                     itemList[slot.index] = null;

@@ -23,7 +23,8 @@ public class InventoryManager : MonoBehaviour
             foreach (Slot slot in inventorySlots)
             {
                 RectTransform slotTransform = slot.GetComponent<RectTransform>();
-                TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                RectTransform assetTransform = slotTransform.Find("Assets").GetComponent<RectTransform>();
+                TextMeshProUGUI itemText = assetTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
                 if (slot.item == null)
                 {
                     itemList[slot.index] = null;

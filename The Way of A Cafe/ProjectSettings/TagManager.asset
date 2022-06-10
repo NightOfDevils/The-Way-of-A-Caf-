@@ -8,6 +8,8 @@ TagManager:
   - Heart
   - Coin
   - Gem
+  - CraftingSlot
+  - InventorySlot
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,7 @@ TagManager:
     locked: 0
   - name: Tables
     uniqueID: 503617767
+    locked: 0
+  - name: Player
+    uniqueID: 1682236467
     locked: 0

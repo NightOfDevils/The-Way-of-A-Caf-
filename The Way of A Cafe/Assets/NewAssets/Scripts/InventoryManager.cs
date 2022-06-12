@@ -43,5 +43,20 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
+
+        foreach(Slot slot in inventorySlots)
+        {
+            RectTransform slotTransform = slot.GetComponent<RectTransform>();
+            RectTransform assetTransform = slotTransform.Find("Assets").GetComponent<RectTransform>();
+            TextMeshProUGUI itemText = assetTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+            if (slot.itemAmount == 1)
+            {
+                itemText.SetText("");
+            }
+            else
+            {
+                itemText.SetText(slot.itemAmount.ToString());
+            }
+        }
     }
 }

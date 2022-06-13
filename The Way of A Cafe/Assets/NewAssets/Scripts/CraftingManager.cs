@@ -14,8 +14,8 @@ public class CraftingManager : MonoBehaviour
     public Slot resultSlot; // slot for final product
     public bool subItems = false;
     public MachineObject machineObject;
-    [SerializeField] Timer timer;
     private int productID;
+    public TimeManager timeManager;
 
     private void Update()
     {
@@ -77,6 +77,11 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
+    public MachineObject ReturnMachine()
+    {
+        return machineObject;
+    }
+
     public void OnMouseDownButton()
     {
         CheckForCreateRecipes();
@@ -125,22 +130,8 @@ public class CraftingManager : MonoBehaviour
             if(recipes[i].craftingRecipe == currentRecipeString) // if recipe matches current recipe
             {
                 productID = i;
-                timer.gameObject.SetActive(true);
-                timer.setDuration(machineObject.machineTime).Begin();
+                timeManager.StartTimer(machineObject.machineType);
                 SubItems(1);
-                /*
-                if (timer.IsFinished()) //FIX TIMER NOT WORKING PROPERLY
-                {
-                    RectTransform slotTransform = resultSlot.GetComponent<RectTransform>();
-                    resultSlot.gameObject.SetActive(true); // set result slot to visible
-                    resultSlot.itemAmount = 1;
-                    Image image = slotTransform.Find("Icon").GetComponent<Image>();
-                    image.sprite = recipeResults[i].icon; // set the sprite in result slot to the sprite of the product
-                    TextMeshProUGUI itemText = slotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
-                    itemText.SetText("");
-                    resultSlot.item = recipeResults[i]; // set the item in the result slot to the product item
-                }
-                */
             }
         }
     }

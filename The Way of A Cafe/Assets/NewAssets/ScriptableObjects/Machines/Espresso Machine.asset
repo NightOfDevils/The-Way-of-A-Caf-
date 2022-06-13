@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: espressomachine
   machineType: 1
-  machineTime: 15
+  machineTime: 5
   image: {fileID: -6559764877361928471, guid: f46bf2ed6eb9f8d428777e99fab1b8fb, type: 3}

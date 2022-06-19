@@ -17,7 +17,8 @@ public class ClickDrag : MonoBehaviour
     public Slot[] allSlots; // Array that contains all slots within the scene (except product slots)
     Slot nearestSlot = null; // create a nearest slot variable that holds the closest slot
     Slot swapSlot = null; // creates a slot variable that holds the slot that swaps items with the closests slot
-    private int count = 0;
+    private bool freeSlotLeft = false;
+    Slot productSlot = null;
 
     private void Update()
     {
@@ -36,14 +37,13 @@ public class ClickDrag : MonoBehaviour
                         /*
                         if(slot.item != null)
                         {
-                            if(count >= 6)
-                            {
-                                nearestSlot = swapSlot; NEED TO IMPLIMENT CHECK TO SEE IF ALL SLOTS HAVE AN ITEM IN THEM IF THEY DO SEND THE ITEM THE PLAYER IS TRYING TO DRAG BACK TO IT'S ORIGIN
-                                count = 0;
-                                break;
-                            }
-                            count++;
+                            freeSlotLeft = false;
                         }
+                        else if(slot.item == null)
+                        {
+                            freeSlotLeft = true;
+                        }
+                        if(freeSlotLeft)
                         */
                         if (dist < shortestDistance) // if the dist of either slot is the smallest
                         {
@@ -244,7 +244,7 @@ public class ClickDrag : MonoBehaviour
                 itemText.SetText(slot.itemAmount.ToString());
             }
             slot.itemAmount = 0;
-            swapSlot = slot;
+            productSlot = slot;
         }
     }
 

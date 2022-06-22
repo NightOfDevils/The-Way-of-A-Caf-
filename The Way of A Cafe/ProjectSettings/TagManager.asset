@@ -14,10 +14,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Blocking
   - Water
   - UI
-  - Floor
+  - InteriorDesign
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1682236467
+    locked: 0
+  - name: Collider
+    uniqueID: 110732103
     locked: 0
